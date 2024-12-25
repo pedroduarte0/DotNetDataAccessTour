@@ -16,6 +16,8 @@ var logger = Log.Logger = new LoggerConfiguration()
 
 var builder = WebApplication.CreateBuilder(args);
 
+builder.AddServiceDefaults();
+
 builder.Host.UseSerilog((_, config) =>
     config
         .ReadFrom.Configuration(builder.Configuration)
@@ -71,6 +73,8 @@ builder.Services.AddSwaggerGen(options =>
 });
 
 var app = builder.Build();
+
+app.MapDefaultEndpoints();
 
 if (app.Environment.IsDevelopment())
 {
