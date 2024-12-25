@@ -22,6 +22,7 @@ builder.Host.UseSerilog((_, config) =>
         .WriteTo.Console()
         .WriteTo.Seq("http://localhost:5341"));
 
+//https://youtu.be/N3xejGTpqJg?feature=shared&t=3044
 builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseSqlServer(
         builder.Configuration.GetConnectionString("DefaultConnection"))
