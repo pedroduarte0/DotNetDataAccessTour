@@ -7,7 +7,7 @@
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
     },
-    "WebDataDemo": {
+    "https": {
       "commandName": "Project",
       "launchBrowser": true,
       "environmentVariables": {

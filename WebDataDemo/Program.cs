@@ -25,10 +25,13 @@ builder.Host.UseSerilog((_, config) =>
         .WriteTo.Console()
         .WriteTo.Seq("http://localhost:5341"));
 
+//builder.AddSqlServerDbContext<AppDbContext>("webdatademo-db");  // delete this
+
 builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseSqlServer(
-        builder.Configuration.GetConnectionString("DefaultConnection"))
+        builder.Configuration.GetConnectionString("webdatademo-db"))
         .LogTo(Log.Logger.Warning, LogLevel.Warning, null));
+
 builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
     .AddEntityFrameworkStores<AppDbContext>();
