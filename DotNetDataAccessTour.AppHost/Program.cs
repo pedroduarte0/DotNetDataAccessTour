@@ -8,4 +8,8 @@ builder.AddProject<Projects.WebDataDemo>("webdatademo")
   .WithReference(sqlServer)
   .WaitFor(sqlServer);
 
+builder.AddProject<Projects.MigrationService>("migrationservice")
+  .WithReference(sqlServer)
+  .WaitFor(sqlServer);
+
 builder.Build().Run();

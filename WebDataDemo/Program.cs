@@ -2,6 +2,7 @@
 using DotNetDataAccessTour.ServiceDefaults;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Diagnostics;
 using Microsoft.Extensions.Caching.Memory;
 using Microsoft.Extensions.DependencyInjection;
 using Serilog;
@@ -30,7 +31,9 @@ builder.Host.UseSerilog((_, config) =>
 builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseSqlServer(
         builder.Configuration.GetConnectionString("webdatademo-db"))
-        .LogTo(Log.Logger.Warning, LogLevel.Warning, null));
+    .ConfigureWarnings(warnings =>
+            warnings.Ignore(RelationalEventId.PendingModelChangesWarning))
+    .LogTo(Log.Logger.Warning, LogLevel.Warning, null));
 
 builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)

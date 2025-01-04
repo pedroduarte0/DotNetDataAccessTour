@@ -17,6 +17,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotNetDataAccessTour.Servic
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "aspire", "aspire", "{99F03CA5-0DD0-47AB-AC3C-7D9315C23037}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MigrationService", "MigrationService\MigrationService.csproj", "{00E76D2B-B43E-4DEF-8010-10F0CF19254E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -63,6 +65,18 @@ Global
 		{AE58401A-E992-409A-AB1A-99FCF56D89B7}.Release|x64.Build.0 = Release|Any CPU
 		{AE58401A-E992-409A-AB1A-99FCF56D89B7}.Release|x86.ActiveCfg = Release|Any CPU
 		{AE58401A-E992-409A-AB1A-99FCF56D89B7}.Release|x86.Build.0 = Release|Any CPU
+		{00E76D2B-B43E-4DEF-8010-10F0CF19254E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{00E76D2B-B43E-4DEF-8010-10F0CF19254E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{00E76D2B-B43E-4DEF-8010-10F0CF19254E}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{00E76D2B-B43E-4DEF-8010-10F0CF19254E}.Debug|x64.Build.0 = Debug|Any CPU
+		{00E76D2B-B43E-4DEF-8010-10F0CF19254E}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{00E76D2B-B43E-4DEF-8010-10F0CF19254E}.Debug|x86.Build.0 = Debug|Any CPU
+		{00E76D2B-B43E-4DEF-8010-10F0CF19254E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{00E76D2B-B43E-4DEF-8010-10F0CF19254E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{00E76D2B-B43E-4DEF-8010-10F0CF19254E}.Release|x64.ActiveCfg = Release|Any CPU
+		{00E76D2B-B43E-4DEF-8010-10F0CF19254E}.Release|x64.Build.0 = Release|Any CPU
+		{00E76D2B-B43E-4DEF-8010-10F0CF19254E}.Release|x86.ActiveCfg = Release|Any CPU
+		{00E76D2B-B43E-4DEF-8010-10F0CF19254E}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
