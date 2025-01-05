@@ -16,7 +16,7 @@ public class AuthorsController : ControllerBase
   public AuthorsController(IConfiguration config,
       ILogger<AuthorsController> logger)
   {
-    _connString = config.GetConnectionString("DefaultConnection");
+    _connString = config.GetConnectionString("webdatademo-db");
     _logger = logger;
   }
 
