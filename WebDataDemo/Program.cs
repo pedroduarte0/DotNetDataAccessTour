@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Caching.Memory;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.OpenApi.Models;
 using Serilog;
 using WebDataDemo.DapperMapping;
 using WebDataDemo.Data;
@@ -65,6 +66,11 @@ builder.Services.AddTimedCachedRepository(logger);
 
 builder.Services.AddSwaggerGen(options =>
 {
+  options.SwaggerDoc("v1", new OpenApiInfo
+  {
+    Title = "WebDataDemo",
+    Version = "v1"
+  });
   options.EnableAnnotations();
   options.TagActionsBy(api => new[] { api.GroupName });
   options.DocInclusionPredicate((name, api) => true);
