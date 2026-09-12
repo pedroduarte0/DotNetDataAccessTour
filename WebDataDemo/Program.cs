@@ -16,12 +16,14 @@ var logger = Log.Logger = new LoggerConfiguration()
   .CreateLogger();
 
 var builder = WebApplication.CreateBuilder(args);
+var seqUri = builder.Configuration["SEQ_INGESTION_URI"]
+    ?? "http://localhost:5341";
 
 builder.Host.UseSerilog((_, config) =>
     config
         .ReadFrom.Configuration(builder.Configuration)
         .WriteTo.Console()
-        .WriteTo.Seq("http://localhost:5341"));
+        .WriteTo.Seq(seqUri));
 
 builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseSqlServer(
